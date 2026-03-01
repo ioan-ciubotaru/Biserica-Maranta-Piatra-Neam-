@@ -40,7 +40,7 @@ nav a.active, nav a:hover {
 }
 
 .hero {
-  background: url('../assets/images/sarata.JPG') no-repeat center/cover;
+  background: url('../assets/images/sarata.jpg') no-repeat center/cover;
   height: 70vh;
   display: flex;
   align-items: center;
