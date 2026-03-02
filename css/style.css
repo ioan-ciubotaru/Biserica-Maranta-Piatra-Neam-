@@ -40,13 +40,16 @@ nav a.active, nav a:hover {
 }
 
 .hero {
-  background: url('../assets/images/sarata.JPG') no-repeat center/cover;
-  height: 70vh;
+  background: url('../assets/images/sarata.JPG') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 60vh;      /* Înlocuiește height fix cu min-height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+  overflow: hidden;       /* Previne scroll lateral */
 }
 
 .hero-text h1 {
