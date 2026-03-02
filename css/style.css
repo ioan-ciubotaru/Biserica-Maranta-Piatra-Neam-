@@ -127,14 +127,6 @@ footer {
   justify-content: center;
 }
 
-/* REPARĂ FORMATAREA PE TELEFON */
-.content .container,
-.gallery .container,
-.donations .container,
-.important-links .container {
-  display: block;
-}
-
 .contact-form input, .contact-form textarea {
   width: 100%;
   margin-bottom: 10px;
@@ -313,3 +305,10 @@ footer {
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
 
+/* REPARĂ FORMATAREA PE TELEFON */
+.content .container,
+.gallery .container,
+.donations .container,
+.important-links .container {
+  display: block;
+}
