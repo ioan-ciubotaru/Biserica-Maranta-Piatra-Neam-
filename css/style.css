@@ -121,13 +121,13 @@ footer {
   color: #003366;
 }
 
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
+/* REPARĂ FORMATAREA PE TELEFON */
+.content .container,
+.gallery .container,
+.donations .container,
+.important-links .container {
+  display: block;
 }
-
 .contact-form input, .contact-form textarea {
   width: 100%;
   margin-bottom: 10px;
