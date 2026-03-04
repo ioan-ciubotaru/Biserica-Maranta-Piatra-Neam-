@@ -3,8 +3,10 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #fafafa;
   color: #333;
+  overflow-x: hidden; /* prevenim scroll lateral */
 }
 
+/* ---------------- HEADER ---------------- */
 header {
   background: #003366;
   color: white;
@@ -27,6 +29,8 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  padding-left: 0;
+  margin: 0;
 }
 
 nav a {
@@ -35,27 +39,30 @@ nav a {
   font-weight: bold;
 }
 
-nav a.active, nav a:hover {
+nav a.active,
+nav a:hover {
   text-decoration: underline;
 }
 
+/* ---------------- HERO ---------------- */
 .hero {
   background: url('../assets/images/sarata.JPG') no-repeat center center;
   background-size: cover;
   width: 100%;
-  min-height: 60vh;      /* Înlocuiește height fix cu min-height */
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  overflow: hidden;       /* Previne scroll lateral */
+  overflow: hidden;
 }
 
 .hero-text h1 {
   font-size: 2.5em;
 }
 
+/* ---------------- BUTTON ---------------- */
 .btn-primary {
   background: #fcb900;
   color: #003366;
@@ -65,6 +72,7 @@ nav a.active, nav a:hover {
   font-weight: bold;
 }
 
+/* ---------------- SERVICES ---------------- */
 .services {
   text-align: center;
   padding: 50px 20px;
@@ -86,6 +94,7 @@ nav a.active, nav a:hover {
   border-radius: 10px;
 }
 
+/* ---------------- FOOTER ---------------- */
 footer {
   background: #003366;
   color: white;
@@ -93,6 +102,7 @@ footer {
   padding: 15px;
 }
 
+/* ---------------- PAGE HEADERS ---------------- */
 .page-header {
   background: #003366;
   color: white;
@@ -104,13 +114,15 @@ footer {
   padding: 40px 20px;
 }
 
+/* ---------------- TABLES ---------------- */
 .program-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.program-table th, .program-table td {
+.program-table th,
+.program-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
@@ -120,6 +132,8 @@ footer {
   background: #fcb900;
   color: #003366;
 }
+
+/* ---------------- CONTACT ---------------- */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -127,7 +141,8 @@ footer {
   justify-content: center;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
@@ -147,6 +162,7 @@ footer {
   color: #003366;
 }
 
+/* ---------------- DEPARTAMENTE ---------------- */
 .departamente {
   background: white;
   margin-bottom: 20px;
@@ -160,6 +176,7 @@ footer {
   color: #003366;
 }
 
+/* ---------------- LINKURI IMPORTANTE ---------------- */
 .important-links {
   padding: 40px 20px;
   text-align: center;
@@ -193,16 +210,11 @@ footer {
   color: #003366;
 }
 
-/* Galerie */
+/* ---------------- GALERIE ---------------- */
 .gallery {
   padding: 40px 20px;
   background: #ffffff;
   text-align: center;
-}
-
-.gallery h2 {
-  color: #003366;
-  margin-bottom: 20px;
 }
 
 .gallery-grid {
@@ -223,14 +235,7 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
-.gallery-grid figcaption {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Donații */
-
+/* ---------------- DONAȚII ---------------- */
 .donations {
   padding: 40px 20px;
   text-align: center;
@@ -245,16 +250,6 @@ footer {
 .donations p {
   max-width: 600px;
   margin: 0 auto 15px auto;
-}
-
-.donations a.btn-primary {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 15px; /* spațiu între buton și textul de sub el */
-}
-.donations-note {
-  font-size: 0.85rem;
-  color: #555;
 }
 
 .donations .show-account {
@@ -274,11 +269,12 @@ footer {
   border: 1px solid #f0d58a;
 }
 
-.donations-account .iban {
-  font-family: monospace;
+.donations-note {
+  font-size: 0.85rem;
+  color: #555;
 }
 
-
+/* ---------------- ABOUT ---------------- */
 .content .container {
   display: block;
 }
@@ -291,12 +287,6 @@ footer {
   padding-bottom: 5px;
 }
 
-.content p,
-.content ul {
-  margin-top: 5px;
-  line-height: 1.7;
-}
-
 .about-block {
   margin-bottom: 30px;
   padding: 20px;
@@ -304,12 +294,3 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
-
-/* REPARĂ FORMATAREA PE TELEFON */
-.content .container,
-.gallery .container,
-.donations .container,
-.important-links .container {
-  display: block;
-}
-
