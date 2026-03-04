@@ -43,3 +43,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 }, { once: true });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const msg = document.getElementById("formMessage");
+  if (form) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.send("SERVICE_ID", "TEMPLATE_ID", {
+        from_name: document.getElementById("from_name").value,
+        reply_to: document.getElementById("reply_to").value,
+        message: document.getElementById("message").value
+      })
+      .then(() => {
+        msg.textContent = "Mesaj trimis cu succes!";
+        msg.style.color = "green";
+        form.reset();
+      }, (error) => {
+        msg.textContent = "A apărut o eroare la trimitere.";
+        msg.style.color = "red";
+        console.error(error);
+      });
+    });
+  }
+});
