@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
 const form = document.getElementById("contactForm"); const msg = document.getElementById("formMessage");
 if (form) { form.addEventListener("submit", function(e) { e.preventDefault();
-                                                         emailjs.send("service_gnhlyq6", "template_ore4k6l", {
+                                                         emailjs.send("service_gnhlyq6", "template_ec7t2ok", {
     from_name: document.getElementById("from_name").value,
     reply_to: document.getElementById("reply_to").value,
     message: document.getElementById("message").value
