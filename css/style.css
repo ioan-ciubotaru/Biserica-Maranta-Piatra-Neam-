@@ -294,3 +294,31 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
+/* ---------------- CONSILIERE ---------------- */
+.consiliere-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.consiliere-form input,
+.consiliere-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.consiliere-form button {
+  background: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.consiliere-form button:hover {
+  background: #fcb900;
+  color: #003366;
+}
