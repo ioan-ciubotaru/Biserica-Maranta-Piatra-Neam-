@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consiliere și Ajutor</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src="assets/images/logo.PNG" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Acasă</a></li>
+          <li><a href="about.html">Despre noi</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="departamente.html">Departamente</a></li>
+          <li><a href="consiliere.html" class="active">Consiliere</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <h1>Consiliere și Ajutor</h1>
+    <p>Lasă-ne datele tale și te vom contacta confidențial.</p>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <form id="consiliereForm">
+        <input type="text" id="c_name" placeholder="Nume complet" required>
+        <input type="email" id="c_email" placeholder="Email" required>
+        <input type="tel" id="c_phone" placeholder="Telefon (opțional)">
+        <textarea id="c_message" rows="5" placeholder="Mesajul tău..." required></textarea>
+        <button type="submit" class="btn-primary">Trimite cererea</button>
+      </form>
+      <p id="consiliereMessage"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Biserica Maranata Piatra Neamț</p>
+  </footer>
+</body>
+</html>
