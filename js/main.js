@@ -64,3 +64,21 @@ if (form) { form.addEventListener("submit", function(e) { e.preventDefault();
   });
 });
 } });
+const consForm = document.getElementById("consiliereForm");
+const consMsg = document.getElementById("consiliereMessage");
+if (consForm) {
+  consForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    emailjs.send("service_gnhlyq6", "template_ore4k6l", {
+      from_name: document.getElementById("c_name").value,
+      reply_to: document.getElementById("c_email").value,
+      message: document.getElementById("c_message").value,
+      phone: document.getElementById("c_phone").value
+    })
+    .then(() => {
+      consMsg.textContent = "Cererea ta a fost trimisă cu succes.";
+      consMsg.style.color = "green";
+      consForm.reset();
+    });
+  });
+}
