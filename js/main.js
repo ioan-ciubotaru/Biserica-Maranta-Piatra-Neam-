@@ -1,39 +1,74 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Site-ul Biserica Maranata Piatra Neamț este activ.");
 
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", e => {
+  /* ------------------ FORMULAR CONTACT ------------------ */
+  const contactForm = document.getElementById("contactForm");
+  const contactMsg = document.getElementById("formMessage");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
 
-      if (!name || !email || !message) {
-        showMessage("Te rugăm să completezi toate câmpurile.", "error");
-        return;
-      }
-
-      showMessage("Mulțumim, mesajul tău a fost trimis cu succes!", "success");
-      form.reset();
+      emailjs.send("service_gnhlyq6", "template_ore4k6l", {
+        from_name: document.getElementById("from_name").value,
+        reply_to: document.getElementById("reply_to").value,
+        phone: "",  // formularul de contact nu are telefon
+        message: document.getElementById("message").value,
+        date: new Date().toLocaleString()
+      })
+      .then(() => {
+        contactMsg.textContent = "Mesaj trimis cu succes!";
+        contactMsg.style.color = "green";
+        contactForm.reset();
+      }, (error) => {
+        contactMsg.textContent = "A apărut o eroare la trimitere.";
+        contactMsg.style.color = "red";
+        console.error("EmailJS Error:", error);
+      });
     });
   }
 
-  function showMessage(text, type) {
-    const msg = document.getElementById("formMessage");
-    msg.textContent = text;
-    msg.style.color = type === "success" ? "green" : "red";
+  /* ------------------ FORMULAR CONSILIERE ------------------ */
+  const consForm = document.getElementById("consiliereForm");
+  const consMsg = document.getElementById("consiliereMessage");
+
+  if (consForm) {
+    consForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.send("service_gnhlyq6", "template_ore4k6l", {
+        from_name: document.getElementById("c_name").value,
+        reply_to: document.getElementById("c_email").value,
+        phone: document.getElementById("c_phone").value,
+        message: document.getElementById("c_message").value,
+        date: new Date().toLocaleString()
+      })
+      .then(() => {
+        consMsg.textContent = "Cererea ta a fost trimisă cu succes.";
+        consMsg.style.color = "green";
+        consForm.reset();
+      }, (error) => {
+        consMsg.textContent = "A apărut o eroare la trimitere.";
+        consMsg.style.color = "red";
+        console.error("EmailJS Error:", error);
+      });
+    });
   }
-});
 
-   
-  // Afișare detalii cont donații
-
-document.addEventListener("DOMContentLoaded", () => {
+  /* ------------------ AFIȘARE CONT DONAȚII ------------------ */
   const showAccountBtn = document.querySelector(".donations .show-account");
   const accountBox = document.getElementById("donationsAccount");
 
   if (showAccountBtn && accountBox) {
+    showAccountBtn.addEventListener("click", () => {
+      const isHidden = accountBox.style.display === "none" || accountBox.style.display === "";
+      accountBox.style.display = isHidden ? "block" : "none";
+      showAccountBtn.textContent = isHidden
+        ? "Ascunde detaliile contului"
+        : "Afișează detaliile contului";
+    });
+  }
+});
     showAccountBtn.addEventListener("click", () => {
       const isHidden = accountBox.style.display === "none" || accountBox.style.display === "";
       accountBox.style.display = isHidden ? "block" : "none";
