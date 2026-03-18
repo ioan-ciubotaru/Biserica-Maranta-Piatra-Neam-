@@ -296,29 +296,45 @@ footer {
 }
 /* ---------------- CONSILIERE ---------------- */
 .consiliere-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  display: block;       /* IMPORTANT – dezactivează flex-ul moștenit */
+  max-width: 700px;
+}
+
+.consiliere-form {
+  display: block;
 }
 
 .consiliere-form input,
 .consiliere-form textarea {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 12px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 .consiliere-form button {
   background: #003366;
   color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
+  width: 100%;
 }
 
 .consiliere-form button:hover {
   background: #fcb900;
   color: #003366;
 }
+
+#consiliereMessage {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
