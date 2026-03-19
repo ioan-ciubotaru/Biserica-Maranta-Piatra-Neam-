@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      emailjs.send("service_gnhlyq6", "template_ore4k6l", {
+      emailjs.send("service_gnhlyq6", "template_ec7t2ok", {
         from_name: document.getElementById("from_name").value,
         reply_to: document.getElementById("reply_to").value,
         phone: "",
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (consForm) {
     consForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      emailjs.send("service_gnhlyq6", "template_ore4k6l", {
+      emailjs.send("service_gnhlyq6", "template_ec7t2ok", {
         from_name: document.getElementById("c_name").value,
         reply_to: document.getElementById("c_email").value,
         phone: document.getElementById("c_phone").value,
