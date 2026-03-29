@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------ AFIȘARE CONT DONAȚII ------------------ */
+
+  
   const showAccountBtn = document.querySelector(".donations .show-account");
   const accountBox = document.getElementById("donationsAccount");
 
@@ -116,4 +118,70 @@ if (consForm) {
       consForm.reset();
     });
   });
-}
+
+
+ /* ------------------ SCRIPT SECTIUNE ALBUM ------------------ */
+
+    // ── Lightbox Logic ──
+    const lightbox     = document.getElementById('lightbox');
+    const lbImg        = document.getElementById('lightbox-img');
+    const lbCaption    = document.getElementById('lightbox-caption');
+    const lbClose      = document.getElementById('lightbox-close');
+    const lbPrev       = document.getElementById('lightbox-prev');
+    const lbNext       = document.getElementById('lightbox-next');
+
+    let currentItems = [];
+    let currentIndex = 0;
+
+    function openLightbox(items, index) {
+      currentItems = items;
+      currentIndex = index;
+      showPhoto(currentIndex);
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function showPhoto(index) {
+      const item = currentItems[index];
+      lbImg.src = item.dataset.src;
+      lbImg.alt = item.dataset.caption || '';
+      lbCaption.textContent = item.dataset.caption || '';
+    }
+
+    // Click on any photo
+    document.querySelectorAll('.album-grid').forEach(grid => {
+      const items = Array.from(grid.querySelectorAll('.album-grid-item'));
+      items.forEach((item, i) => {
+        item.addEventListener('click', () => openLightbox(items, i));
+      });
+    });
+
+    // Navigation
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+      showPhoto(currentIndex);
+    });
+    lbNext.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % currentItems.length;
+      showPhoto(currentIndex);
+    });
+
+    // Close on backdrop click
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lbPrev.click();
+      if (e.key === 'ArrowRight') lbNext.click();
+    });
+  }
