@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Album Foto - Biserica Maranata Piatra Neamț</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="assets/images/logo.PNG" class="logo" alt="Logo Biserica Maranata Piatra Neamț">
+      <nav>
+        <ul>
+          <li><a href="index.html">Acasă</a></li>
+          <li><a href="about.html">Despre noi</a></li>
+          <li><a href="album.html" class="active">Album</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="departamente.html">Departamente</a></li>
+          <li><a href="consiliere.html">Consiliere si Ajutor</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <h1>Album Foto</h1>
+    <p>Amintiri din momentele importante ale activităților noastre.</p>
+  </section>
+
+  <section class="album-section">
+    <div class="container">
+
+      <!-- ════════════════════════════════
+           EVENT 1 — Add your own title,
+           description and photos below.
+           Duplicate this block for each event.
+           ════════════════════════════════ -->
+      <div class="album-event">
+        <div class="album-event-header">
+          <h2>Tabăra de Vară 2024</h2>
+          <p>Momente frumoase petrecute împreună în natură, cu activități spirituale și recreative pentru toată familia.</p>
+        </div>
+        <div class="album-grid" data-album="0">
+          <!-- Photo item — copy this block for each photo -->
+          <div class="album-grid-item-wrap">
+            <div class="album-grid-item" data-src="assets/images/albums/vara2024/foto1.jpg" data-caption="Tabăra de Vară 2024">
+              <img src="assets/images/albums/vara2024/foto1.jpg" alt="Tabăra de Vară 2024" loading="lazy">
+              <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <p class="photo-caption">Tabăra de Vară 2024</p>
+          </div>
+
+          <div class="album-grid-item-wrap">
+            <div class="album-grid-item" data-src="assets/images/albums/vara2024/foto2.jpg" data-caption="Activități recreative">
+              <img src="assets/images/albums/vara2024/foto2.jpg" alt="Activități recreative" loading="lazy">
+              <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <p class="photo-caption">Activități recreative</p>
+          </div>
+
+          <div class="album-grid-item-wrap">
+            <div class="album-grid-item" data-src="assets/images/albums/vara2024/foto3.jpg" data-caption="Momente spirituale">
+              <img src="assets/images/albums/vara2024/foto3.jpg" alt="Momente spirituale" loading="lazy">
+              <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <p class="photo-caption">Momente spirituale</p>
+          </div>
+          <!-- Add more photos here -->
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════
+           EVENT 2
+           ════════════════════════════════ -->
+      <div class="album-event">
+        <div class="album-event-header">
+          <h2>Conferința Anuală 2024</h2>
+          <p>Conferința anuală a organizației, un moment de comuniune, rugăciune și binecuvântare pentru toți membrii.</p>
+        </div>
+        <div class="album-grid" data-album="1">
+          <div class="album-grid-item-wrap">
+            <div class="album-grid-item" data-src="assets/images/albums/conferinta2024/foto1.jpg" data-caption="Conferința Anuală 2024">
+              <img src="assets/images/albums/conferinta2024/foto1.jpg" alt="Conferința Anuală 2024" loading="lazy">
+              <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <p class="photo-caption">Conferința Anuală 2024</p>
+          </div>
+
+          <div class="album-grid-item-wrap">
+            <div class="album-grid-item" data-src="assets/images/albums/conferinta2024/foto2.jpg" data-caption="Momente de rugăciune">
+              <img src="assets/images/albums/conferinta2024/foto2.jpg" alt="Momente de rugăciune" loading="lazy">
+              <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <p class="photo-caption">Momente de rugăciune</p>
+          </div>
+          <!-- Add more photos here -->
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════
+           ADD MORE EVENTS by copying the
+           block above and updating the
+           title, description, folder name
+           and photo filenames.
+           ════════════════════════════════ -->
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button id="lightbox-close" aria-label="Închide">&#x2715;</button>
+    <button id="lightbox-prev" aria-label="Anteriorul">&#8592;</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button id="lightbox-next" aria-label="Următorul">&#8594;</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Biserica Maranata Piatra Neamț. Toate drepturile rezervate.</p>
+  </footer>
+
+</body>
+</html>
