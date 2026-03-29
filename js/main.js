@@ -63,66 +63,65 @@ document.addEventListener("DOMContentLoaded", () => {
   /* --- LIGHTBOX ALBUM --- */
 
   // Lightbox functionality
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const lightboxCaption = document.getElementById("lightbox-caption");
-  const lightboxClose = document.getElementById("lightbox-close");
-  const lightboxPrev = document.getElementById("lightbox-prev");
-  const lightboxNext = document.getElementById("lightbox-next");
+  /* --- LIGHTBOX ALBUM --- */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxCaption = document.getElementById("lightbox-caption");
+const lightboxClose = document.getElementById("lightbox-close");
+const lightboxPrev = document.getElementById("lightbox-prev");
+const lightboxNext = document.getElementById("lightbox-next");
 
-  let currentAlbum = [];
-  let currentIndex = 0;
+let currentAlbum = [];
+let currentIndex = 0;
 
-  // Open lightbox on photo click
-  document.querySelectorAll(".album-grid-item").forEach((item, index) => {
-    item.addEventListener("click", () => {
-      const albumId = item.closest(".album-grid").dataset.album;
-      currentAlbum = Array.from(
-        document.querySelectorAll(`.album-grid[data-album="${albumId}"] .album-grid-item`)
-      );
-      currentIndex = currentAlbum.indexOf(item);
-      showLightbox();
-    });
-  });
-
-  function showLightbox() {
-    const item = currentAlbum[currentIndex];
-    lightboxImg.src = item.dataset.src;
-    lightboxCaption.textContent = item.dataset.caption;
-    lightbox.style.display = "flex";
-  }
-
-  function closeLightbox() {
-    lightbox.style.display = "none";
-  }
-
-  function nextPhoto() {
-    currentIndex = (currentIndex + 1) % currentAlbum.length;
+// Open lightbox on photo click
+document.querySelectorAll(".album-grid-item").forEach((item) => {
+  item.addEventListener("click", () => {
+    const albumId = item.closest(".album-grid").dataset.album;
+    currentAlbum = Array.from(
+      document.querySelectorAll(`.album-grid[data-album="${albumId}"] .album-grid-item`)
+    );
+    currentIndex = currentAlbum.indexOf(item);
     showLightbox();
-  }
-
-  function prevPhoto() {
-    currentIndex = (currentIndex - 1 + currentAlbum.length) % currentAlbum.length;
-    showLightbox();
-  }
-
-  // Event listeners
-  lightboxClose.addEventListener("click", closeLightbox);
-  lightboxNext.addEventListener("click", nextPhoto);
-  lightboxPrev.addEventListener("click", prevPhoto);
-
-  // Close on background click
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
   });
+});
 
-  // Keyboard navigation
-  document.addEventListener("keydown", (e) => {
-    if (lightbox.style.display === "flex") {
-      if (e.key === "ArrowRight") nextPhoto();
-      if (e.key === "ArrowLeft") prevPhoto();
-      if (e.key === "Escape") closeLightbox();
-    }
-  });
+function showLightbox() {
+  const item = currentAlbum[currentIndex];
+  lightboxImg.src = item.dataset.src;
+  lightboxCaption.textContent = item.dataset.caption;
+  lightbox.classList.add("active");  
+}
 
+function closeLightbox() {
+  lightbox.classList.remove("active");  
+}
+
+function nextPhoto() {
+  currentIndex = (currentIndex + 1) % currentAlbum.length;
+  showLightbox();
+}
+
+function prevPhoto() {
+  currentIndex = (currentIndex - 1 + currentAlbum.length) % currentAlbum.length;
+  showLightbox();
+}
+
+// Event listeners
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxNext.addEventListener("click", nextPhoto);
+lightboxPrev.addEventListener("click", prevPhoto);
+
+// Close on background click
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// Keyboard navigation
+document.addEventListener("keydown", (e) => {
+  if (lightbox.classList.contains("active")) {  
+    if (e.key === "ArrowRight") nextPhoto();
+    if (e.key === "ArrowLeft") prevPhoto();
+    if (e.key === "Escape") closeLightbox();
+  }
 });
